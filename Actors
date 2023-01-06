@@ -1,0 +1,36 @@
+
+CREATE Table actors 
+(id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    movie TEXT,
+    oscars_won INTEGER);
+    
+INSERT INTO actors VALUES (1,'Clint Eastwood', 'Million Dollar Baby', 5);
+INSERT INTO actors VALUES (2, 'Jack Nicholson', 'Chinatown', 3);
+INSERT INTO actors VALUES (3, 'Daniel Day-Lewis', 'There Will Be Blood', 3);
+INSERT INTO actors VALUES (4, 'Robert De Niro', 'Raging Bull', 2);
+INSERT INTO actors VALUES (5, 'Denzel Washington', 'Fences', 2);
+
+CREATE Table birthplace 
+(id INTEGER PRIMARY KEY AUTOINCREMENT,
+city TEXT);
+    
+INSERT INTO birthplace VALUES (1, 'San Francisco');
+INSERT INTO birthplace VALUES (2, 'Neptune');
+INSERT INTO birthplace VALUES (3, 'London');
+INSERT INTO birthplace VALUES (4, 'Manhattan');
+INSERT INTO birthplace VALUES (5, 'Mount Vernon');
+
+SELECT * FROM actors; 
+SELECT * FROM birthplace;
+
+SELECT name, movie, oscars_won, b.city FROM actors a
+LEFT OUTER JOIN birthplace b
+ON a.id=b.id 
+ORDER BY a.name;
+
+
+
+
+
+
